@@ -1,0 +1,4 @@
+autogen>=0.2.0
+PyPDF2>=3.0.0
+asyncpg>=0.28.0
+pgvector>=0.2.0

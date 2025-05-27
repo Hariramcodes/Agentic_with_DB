@@ -1,0 +1,78 @@
+ 
+What Is Covered Under the Standard Dell Warranty  
+ 
+Coverage  
+The Dell Limited Warranty does not cover system repairs for damages due to external 
+causes, including accident, abuse, misuse, problems with electrical power, servicing not 
+authorized by Dell, usage not in accordance with product instructions, failure to p erform 
+required preventive maintenance, and problems caused by use of parts and components 
+not supplied by Dell. While these acts are not covered under the Dell warranty, Dell will 
+assist the customer in correcting this issue; however, it will be the cust omer's 
+responsibility to pay for such efforts.  
+Examples of natural situations not covered under the standard Dell Limited Warranty 
+include damage caused by fire, flood, lightning strikes, and power surges. For the exact 
+wording of your warranty, you can fi nd it:  
+  
+• In the Start menu, in the Dell Accessories program group, under Service and 
+Support Policies.  
+• On the Dell Web site at  Dell Terms of Sale, License Agreements & Policies . 
+ 
+Agents may also refer to  Accidental Damage (Complete Care/Cover) – Dell Global 
+Policy   for help assisting customers with Accidental Damage coverage.  
+` 
+Notice:  
+ 
+If an issue occurs while a customer is performing troubleshooting tasks 
+as directed by Dell Technical Support and such issue is caused by Dell 
+Technical Support’s instructions, then this issue would be covered by 
+Dell. This policy includes the accidental b reakage of a part or loss of 
+functionality of parts by updating BIOS updates.  
+  
+Table of Contents  
+1. Background  2. Procedure  
+  
+Table of Contents  
+ 
+Policy  
+N/A  
+Keywords  
+Help KeywordsFollow SEO guidelines to add relevant keywords for indexing and searching.  
+Dell Standard Warranty Cover Accidental Damage  
+Procedure  
+Voiding the Dell Limited Warranty  
+  
+Notice:  
+You cannot "void" the Dell limited warranty. Rather, we exclude certain items from 
+the limited warranty, and to the extent the issue is related to those exclusion items, 
+the limited warranty does not apply. However, the overall system warranty remains 
+intact. To use memory as an example, if a customer called in with a server issue 
+that we could confirm was related to the use of the third -party memory, we would 
+not cover the issue under limited warranty. However, if the same customer had a 
+faulty motherboard  one day later unrelated to the memory, and if the system was 
+within the warranty term, then we would replace the faulty component, even with 
+third-party memory installed.  
+The limited warranty exclusions are below.  
+ 
+This limited warranty does not cover:  
+• Software, including without limitation, the operating system and software 
+added to the Dell -branded hardware products through our factory -
+integration system, third -party software or the reloading of software.  
+• Non Dell-branded products and accessories  
+• Problems that result, directly or indirectly, from:  o External causes such as accident, abuse, misuse, or problems with 
+electrical power  
+o Servicing not authorized by Dell.  
+o Usage that is not in accordance with product instructions.  
+o Failure to follow the product instructions or failure to perform 
+preventive maintenance.  
+o Problems caused by using accessories, parts, or components not 
+supplied by Dell  
+• Commercial hardware products that use, or in which have been installed, 
+products, or components that have not been provided by Dell.  
+• Products with missing or altered Service Tags or serial numbers.  
+• Products for which Dell has not received payment  
+• Normal wear and tear.  
+This is a subtle distinction, but we must be careful not to tell customers that doing 
+something in the list above voids the entire system warranty. This is both legally 
+inaccurate and will lead to terrible CE.  
+Table of Contents  
+ 

@@ -1,0 +1,735 @@
+  
+ 
+Table of Contents:  
+• Background  
+• Policy  
+o Unlimited versus Limited AD Policy  
+o Accidental Damage Is / Is Not Covered Table  
+o ADD for Monitors  
+• Procedure  
+o Entitlement  
+o Accidental Damage Logging Requirements  
+o Unlimited Accidental Damage Pilot  
+o Accidental Damage Limitations and Dispatch  
+▪ US/Can - Dell Accidental Damage Custom Bid Greater than 1 
+incident per contract year  
+o Override Process  
+• Related Articles  
+• Depot Manual Decrementing Process  
+ 
+Background  
+Accidental Damage (AD) Service is a repair program for select Dell Client systems that have 
+been exposed to unintentional, non -cosmetic damage not covered by limited hardware 
+warranty.  
+  
+ Note:     Standalone Accidental Damage (AD)service should not be sold to a Premium 
+Support Plus  or Pro Support Plus customer,  as the Premium Support Plus / Pro 
+Support Plus entitlement provides AD coverage.  
+ 
+Accidental Damage Service is available in multi -year terms, coinciding with the term of the 
+product’s underlying limited hardware warranty. Accidental Damage may be sold at the 
+Point of Sale (POS) or After Point of Sale (APOS), provided the system is opera tional and 
+Accidental sales is permitted by law.  
+  
+ Customer Experience:  
+   
+ 
+APOS Accidental Damage is not available in EMEA.  
+ 
+Within some regions Accidental Damage may be referred to as Complete Care. For the 
+purposes of this article the service will be referred to as Accidental Damage.  
+ 
+TOC  
+  
+Regulation:  
+  
+Under South African law, it is required that Dell and /or Dell third party 
+representative, cannot deny an accidental damage claim. The only entity 
+that can deny an accidental claim is the insurer, in this case, AIG. This 
+will impact both Tech Support (Dell ) and Dell’s 3rd party channel partner 
+for CIS which is Reddington. We have been advised that there is no 
+depot or CAR for South Africa; therefore, only Tech Support and CIS are 
+impacted by this requirement.  
+Current Impact:   Current denial rates are only 5 -7 per year for the South African region so 
+the impact will be relatively minimal; however, the ramifications will be 
+severe if denials are not properly handled.  
+Requirements  
+If a case comes into the South African support queues or the CIS centers 
+and the accidental damage is covered based on warranty entitlement, 
+nothing different needs to be done. Support the issue as normal.  
+If a case comes into the South African support queues or the CIS centers 
+and the accidental damage is NOT covered based on warranty 
+entitlement, AND the technician / agent feels the claim should be denied 
+he must contact tier two / management for approval,  and then the 
+following process must be followed by South African law.   
+1. Upon realization and/or belief that the issue is NOT covered under 
+Accidental Damage warranty, the technician will keep ownership 
+of the case, and advise the customer that the determination of 
+service coverage will need to be determined by the insurance 
+carrier, in this case, AIG.   
+2. The technician or agent will advise the customer that they will 
+have a determination within 24 hours.   
+a. We have an SLA agreement with AIG to support a 24 -hour 
+turnaround time for their answer whether the issue will be 
+covered or not.  
+3. The technician or agent will download  Dell Claim Referral 
+Form  and send the completed form 
+to Delcia.Brown@aig.com  and  Meera.Thupsi@aig.com . 
+4. AIG will review the form and revert a determination back to the 
+agent within 24 hours.  
+5. If AIG finds the issue as COVERED under Accidental Damage 
+warranty, then the technician or agent will set up the service and 
+contact the customer accordingly.  
+6. If AIG finds the issue is NOT COVERED under Accidental Damage 
+warranty, then the technician or agent will contact the customer  and advise them that the issue is NOT COVERED and service will 
+not be provided.  
+a. The technician or agent can advise the customer that 
+service can be purchased and the repair made at the 
+customer’s expense, should they so choose to proceed 
+with the service.  
+  
+Regulation:  
+ 
+ 
+ 
+Australia ProSupport Plus/Premium Support Plus are not automatically 
+entitled to AD.  
+Customers have to purchase Accidental Damage coverage separately 
+after point of sale.  
+Refer to:  ProSupport Plus Policy and Procedure - Dell Global Policy 
+(Commercial) . 
+For Changes on Australia Process please view:  
+Insurance regulation for Australia only: Accidental Damage - Dell APJ 
+CSG Policy  
+  
+Regulation:  
+ 
+ 
+This policy applies to any Accidental Damage product (AD Stand Alone, ProSupport 
+Plus bundle and Premium Support Plus bundle).  
+ 
+Under Australian law, it is required that Dell and /or Dell third party representative, 
+cannot deny an accidental damage claim. The only entity that can deny an 
+accidental claim is the insurer, in this case, AIG. This will impact both Tech Support 
+(Dell) and Dell’s Service Provider in the field doing the work. We have been advised 
+that there is no depot or CAR for Australia; theref ore, only Tech Support and Dell  Service Providers are impacted by this requirement.  
+ 
+Current Impact:  
+Current denial rates are only 5 -7 per year for Australia so the impact will be 
+relatively minimal; however, the ramifications will be severe if denials are not 
+properly handled.  
+ 
+Requirements  
+If a case comes into the Australian support queues and the accidental damage is 
+covered based on warranty entitlement, nothing different needs to be done. 
+Support the issue as normal.  
+If a case comes into the Australian support queues and the accidental da mage is 
+NOT covered based on warranty entitlement, AND the technician / agent feels the 
+claim should be denied he must contact tier two / management for approval, and 
+then the following process must be followed by Australian law.  
+1. Upon realization and/or belief that the issue is NOT covered under 
+Accidental Damage warranty, the technician will keep ownership of the case, 
+and advise the customer that the determination of service coverage will 
+need to be determined by the insurance ca rrier, in this case, AIG.  
+2. The technician or agent will advise the customer that they will have a 
+determination within 24 hours.  
+a. We have an SLA agreement with AIG to support a 24 -hour turnaround 
+time for their answer whether the issue will be covered or not.  
+3. The technician or agent will download  Dell-AIG AD Claim Denial Form 
+Australia  and send the completed form 
+to Peter.Piotrowski@aig.com , rohan.pillay@aig.com  and  claimsadmin@aig.
+com. 
+Failure to provide all information requested or fully complete this claim form 
+may delay the review of the claim.  
+4. AIG will review the form and revert a determination back to the agent within 
+24 hours.  
+5. If AIG finds the issue as COVERED under Accidental Damage warranty, then 
+the technician or agent will set up the service and contact the customer 
+accordingly.   6. If AIG finds the issue is NOT COVERED under Accidental Damage warranty, 
+then the technician or agent will contact the customer and advise them that 
+the issue is NOT COVERED and service will not be provided.  
+a. The technician or agent can advise the customer that service can be 
+purchased, and the repair made at the customer’s expense, should 
+they so choose to proceed with the service.  
+  
+Regulation:  
+ 
+ 
+ 
+Under South Korean law, it is required that Dell and /or Dell third party 
+representative, cannot deny an accidental damage claim. The only entity 
+that can deny an accidental claim is the insurer, in this case, AIG. This 
+will impact both Tech Support (Dell)  and any of Dell’s 3rd party partners.   
+ 
+Current Impact:  
+Instances where an Accidental Damage claim would be denied relatively 
+minimal; however, the ramifications will be severe if denials are not 
+properly handled.  
+ 
+Requirements  
+If a case comes into the South Korean support queues or the CIS centers 
+(if available) and the accidental damage is covered based on warranty 
+entitlement, nothing different needs to be done. Support the issue as 
+normal.  
+If a case comes into the South Korea n support queues or the CIS centers 
+(if available) and the accidental damage is NOT covered based on 
+warranty entitlement, AND the technician / agent feels the claim should 
+be denied he must contact tier two / management for approval, and then 
+the followi ng process must be followed by South Korean law.   
+1. Upon realization and/or belief that the issue is NOT covered under 
+Accidental Damage warranty, the technician will keep ownership 
+of the case, and advise the customer that the determination of  service coverage will need to be determined by the insurance 
+carrier, in this case, AIG.   
+2. The technician or agent will advise the customer that they will 
+have a determination within 24 hours.   
+• We have an SLA agreement with AIG to support a 24 -hour 
+turnaround time for their answer whether the issue will be 
+covered or not.  
+3. The technician or agent will download  Dell Claim Referral 
+Form  and send the completed form to  KR_dellclaim@aig.com . 
+4. AIG will review the form and revert a determination back to the 
+agent within 24 hours.  
+5. If AIG finds the issue as COVERED under Accidental Damage 
+warranty, then the technician or agent will set up the service and 
+contact the customer accordingly.  
+6. If AIG finds the issue is NOT COVERED under Accidental Damage 
+warranty, then the technician or agent will contact the customer 
+and advise them that the issue is NOT COVERED and service will 
+not be provided.  
+• The technician or agent can advise the customer that 
+service can be purchased and the repair made at the 
+customer’s expense, should they so choose to proceed 
+with the service.  
+Policy  
+Accidental Damage Scope  
+  
+Unlimited versus Limited AD Policy  
+ Note:  
+  Please note that there is an Unlimited Accidental Damage Pilot for Education 
+Customers that doesn’t follow the AD limitations noted below in  (Table 1) 
+ 
+Unlimited Accidental Damage will have Custom SKUs listed in Lightning to  differentiate from Standard Accidental Damage.  
+ 
+Please refer to the  Unlimited AD  in the Procedure section below for more on 
+Unlimited Accidental Damage and for the Custom SKUs.  
+  
+In 2014 the global AD Service Description was updated to include new AD usage limits . 
+The new AD Service Description was rolled out at various dates per  (Table 1). 
+Customers with AD entitlement purchased prior to the below dates are excluded from the 
+new AD limitations requirements since they are under the previous unlimited claim AD 
+Service Contract.  
+New AD limitations:  
+1. Limitation1: Enforces one AD claim per  contract year  (starting from the AD order 
+date). 
+2. Limitation2: Enforces 30 day wait on new APOS claims.  
+ Note:  
+  Service Description change varies by location. Lightning will auto -calculate AD 
+activity and status based on the dates found in  (Table 1). 
+ 
+For more information on AD limitations and AD field details, refer to 
+the Entitlement  and  Accidental Damage Limitations and Dispatch  sections 
+below.  
+  
+Country or Region  AD Limitations Service Description 
+Date  
+All other countries/regions not mentioned 
+below  1-Dec-14 
+Australia  16-Jan-15 
+Finland  16-Jan-15 
+Greece  16-Jan-15  Czech Republic  16-Jan-15 
+Denmark  16-Jan-15 
+Italy  16-Jan-15 
+Portugal  16-Jan-15 
+South Africa  16-Jan-15 
+Sweden  16-Jan-15 
+LATAM + Brazil  7-Mar-16 
+Spain purchased and registered assets.  Out of Scope  
+Table 1:  AD Limitations Service Description Date  
+  
+  
+  Note:  
+   
+ 
+Due to legal in country requirements Accidental Damage + Theft is part of the 
+standard Accidental Damage offering.  
+  
+TOC  
+Accidental Damage Is / Is Not Covered Table  
+What does Accidental Damage cover? Accidental Damage covers un -intentional damage 
+including damage caused by drops, spills, and electrical surges. Cosmetic damage is not 
+covered under AD.  
+ Customer Experience:  
+  If you are in doubt whether a particular incident has AD coverage, please ask 
+your management and clearly document why you decided to cover or not 
+cover the incident in the case notes.  
+   Is Covered  Is Not Covered  
+Liquid spilled on or in unit  Biohazard/Hazardous Contamination. 
+Refer to  BioHazard/Hazardous Material - Dell 
+Global Policy  
+Drops or Falls  Normal wear and tear such as missing rubber 
+feet, or frayed wires on AC adapters that are 
+still functional, are not covered.  
+  
+Cosmetic damage including dents, scratches, 
+cracks in plastics are not covered under AD 
+unless it impedes the overall functionali ty or 
+poses a safety concern for the customer. For 
+Safety issues refer to  Product Safety Policy 
+and Procedure - Dell Global Policy  
+  
+Intentional damage For items that have 
+intentional Customer Induced Damage (CID), 
+please refer to  Dell Global Field Replaceable 
+Parts Customer Induced Damage Asset 
+Recovery (CIDAR) - Dell Global Policy  
+Electrical power surges  Damage due to acts of nature (rain, fire, flood, 
+earthquake, hurricane, or other).  
+  
+ Note:  
+  Lightning, while an act of nature, very 
+rarely strikes a system directly. Lightning 
+may, however cause power surges to 
+travel to the system. Power surges are 
+covered under Accidental Damage.  
+ 
+Corporate and small business agents,  see  System Damage Due to Natural Disasters 
+- Dell Global Policy  
+Damaged  or broken LCD  Theft or loss  
+International support for users 
+traveling outside of country of origin 
+(see International Support).  
+ 
+International Support is best effort 
+and is subject to local service 
+availability. Onsite response times 
+and part availability will vary by 
+location.  
+• Dell International Support 
+Policy - Dell Global Policy  
+• Validating Service Coverage - 
+Dell Global Policy  System exchanges while out of the country  
+ 
+Out of country support does not include 
+whole unit system exchange. However, whole 
+unit replacement can be performed once they 
+are in their home country.  
+Key(s) separating from the keyboard. 
+See  Notebook Keyboard Warranty 
+Policy and Procedure - Dell Global 
+Policy  Damage from incorrect customer installation  
+Hardware  Software (Media)  
+Portable Batteries damaged by 
+unintentional accidental damage 
+events (refer to  Portable System 
+Battery Policy and Procedure - Dell 
+Global Policy   
+  
+ Note:  
+  AD will cover a battery as long 
+as the battery is under warranty 
+and AD was purchased with the Portable Batteries outside of the warranty 
+period   system. Either the standard 
+battery warranty or extended.  
+ 
+AC Adapters (un -intentional 
+damage).   Refer to  AC Adapter Policy 
+and Procedure - Dell Global Policy  Custom after mark skins (top covers will only 
+be replaced with standard covers  
+  Consumables (Bulbs, Ink Cartridges)  
+  Accessories (Examples: Docking Stations, 
+Advanced Port Replicators, Mice, Keyboards, 
+Active Pen, External Speakers, etc.) even 
+when attached to a system with AD coverage.   
+  Damage due to repairs or attempted repairs 
+performed by any party other than Dell or 
+someone designated by Dell.  
+  Any recovery or transfer of data stored on the 
+Supported Product.  
+  Any damage sustained by a non -Dell shipping 
+company when the customer ships their AD 
+entitled computer to a different location.  
+Table 2:  Accidental Damage Is/Is Not  
+TOC  
+ Customer Experience:  
+  Several different types of processing errors may cause an Accidental Damage 
+contract to appear longer than the limited hardware warranty on 
+the Contracts  tab. Technical support agents cannot honor Accidental Damage 
+contracts on expired limited hardware warranties. Agents should follow their 
+segment's escalation process in the event that a customer with an expired 
+limited hardware warranty feels that they ar e entitled to Accidental Damage 
+service.  
+ 
+Accidental Damage claim on a monitor entitled for Accidental Damage protection:   All Monitors with or without a service tag may be eligible for Accidental Damage protection 
+if it was sold in the same order with a Desktop System containing Accidental Damage 
+Protection. Not valid for Monitors sold with a notebook system.  
+There are instances where you may see a monitor that shows an Accidental Damage 
+entitlement; however, if you attempt to do an Accidental Damage dispatch against the 
+monitor's service tag, the Accidental Damage check box may be greyed out. If this occurs, 
+ask the customer for the service tag of the desktop system that is connected to the monitor 
+that is damaged.  
+How to dispatch a monitor that shows an Accidental Damage entitlement:  
+1. Verify that the desktop service tag shows Accidental Damage entitlements  
+2. Setup a dispatch for the damaged monitor on the desktop's service tag and ensure 
+that you check the Accidental Damage check box  
+Important Information related to Limited AD Policy Claim  
+1. A Monitor without a service tag but dispatched using the Desktop service tag that 
+has the Accidental Damage Protection will consume the one AD claim per contract 
+year, not allowing in the same year another dispatch under AD Policy  
+2. A Monitor with a service tag that has it owns Accidental Damage Protection, even 
+when dispatched using a Desktop Service Tag will not be considered as a valid claim 
+for the Desktop Service Tag  
+Seek the advice of your QL or manager for additional questions. You may also reach out to 
+Kelly Farmer, Operations Manager for Accidental Damage @  Kelly Farmer  
+TOC  
+ 
+Keywords  
+Help KeywordsFollow SEO guidelines to add relevant keywords for indexing and searching.  
+Accidental Damage  
+Complete Care  
+Procedure  
+Procedure  
+Procedure - Entitlement (Delta)     
+Note: Gathering Photographs of the Damage.  
+While we can't require customers to send us pictures of the damage, it is 
+a best practice to try and gather pictures to determine the extent of the 
+damage. Knowing the extent of the damage will help determine if parts 
+replacement or whole unit exchange is the best course of action.  
+  
+1. Ensure the customer has AD availability by checking the Entitlement tab 
+content  
+a. Go to  Asset  tab 
+b. Click  Entitlement  sub tab.  
+c. Click Accidental Damage entitlement under the  Entitlement  tab.  
+d. Review the Accidental Damage detail fields:  
+• AD Limit Eligible (Y, N, or W)  
+• Look for Unlimited AD entitlement and proceed with Override 
+approval (instructions below) as needed  
+  
+ Note:  
+  If the Tag does not have AD entitlement, then AD detail 
+fields will not display rows under the field labels.  
+•   
+• IF AD dispatch is  available  to use, this field will indicate "Y". 
+Scenarios that will create a "Y":  
+▪ AD is active, entitlement was sold under the Service 
+Description with Limitations, and AD Count = 0.  
+▪ AD is active, entitlement was sold under the Service 
+Description with unlimited AD dispatches. In this 
+scenario, the AD details fields will be .   • IF AD dispatch is  not available  to use, this field will indicate 
+"N" or "W".  
+▪ Scenarios that will create a "N":  
+• AD is active, entitlement was sold under the 
+Service Description with Limitations, BUT the AD 
+Count = 1 or more. This means AD has been 
+used for this contractual year  (starting from the 
+AD order date)  and any AD dispatch would need 
+to go through the AD Override process if 
+appropriate through the regional Point of Need 
+/OOW /OWR (customer pays) option.  
+• AD is expired.  
+▪ Scenarios that will create a "W":  
+• AD workorder has been created but not 
+completed.  
+• Once the AD workorder has been completed the 
+field will change to “N”.  
+  
+• AD Count  = 0 or 1.  
+ 
+If an AD claim has been placed on the customer’s current contractual 
+year, then the count is 1, else the count remains 0 until an AD 
+dispatch is created.  
+• AD Count will always be either 0 or 1. To determine Override 
+Count, go to the AD Override Count Field.  
+• Once the Accidental Damage limit is reached, customer may 
+request repair of the supported product for an additional 
+charge.  
+• In the event that AD limit has been reached in error or 
+otherwise requires an Override, refer to the  Accidental Damage 
+Override process . 
+• AD Override Count  - Number of overrides performed on the tag (0, 1, 
+2, etc.)   • AD Contract Year  - It is the year of the AD contract. For example, if it’s 
+the first contract year then field = 1; second contract year =2.  
+• AD Contract Start Date  – Date when AD entitlement starts.  
+• AD Contract End Date  – Date when AD entitlement ends.  
+• AD Dispatch Date  - This is the date of the last Accidental Damage 
+dispatch created for that Asset. This field is of the form MM/DD/YYYY.  
+2. Procedure – Entitlement (SFDC)  
+a. In SFDC, type the system’s service tag in the search bar.  
+b. Select Asset from the drop down on the left of the search bar.  
+ 
+c. On the right side of the screen, under Entitlements, click View Details  
+ 
+ 
+d. From this screen, you can determine Accidental Damage entitlement 
+effective dates, and if the asset is eligible for an Accidental Damage 
+dispatch.  
+ 
+3. Ensure damage is in scope . Please refer to  (Table 2) for damage details.  
+4. Determine how the damage occurred (AD or Break/Fix)  
+• Make sure that  you determine whether hardware failure is AD or 
+Break/Fix . 
+• Probing questions to be used:  
+• When and how did the damage occur?  
+• Where was the system at the time of the incident?  
+• What is the extent of the damage?  
+TOC  
+ 
+   Accidental Damage Logging Requirements  
+When setting up an Accidental Damage Dispatch: In the SR / Case Title, enter what part / 
+component is broken and how it became broken.   Very simple terms can be used to 
+describe the issue.  
+Examples:  
+• AD Claim: LCD Broken – System Dropped  
+• AD Claim: System No Power – Liquid Spill  
+• AD Claim: Palmrest Broken – System Dropped  
+TOC  
+ 
+  
+Procedure – Accidental Damage Limitations, Repair Model and Dispatch  
+Accidental Damage Limitations Overview  
+1. Limitation1: Enforces one AD claim per contract year  (starting from the AD order 
+date). 
+2. Limitation2: Enforces 30 day wait on new APOS claims.  
+AD entitlement purchased prior the AD Service Description date per ( Table 1) is excluded 
+from the 1 AD claim per year and the 30 day wait period on new APOS AD claims because it 
+is under the previous AD Service Contract that permitted unlimited claims.  
+Accidental Damage Limitations :  
+1. Number of claims  
+• One AD claim per Contract Year.  
+• For any incident that Dell determines is an eligible incident see ( Table 2), 
+Service coverage is limited to one AD incident per supported product per 
+contract year commencing from the start date of the term of Service. The 
+ability to submit an incident does not accumulate or carry over to any 
+subsequent period.  
+• Our Accidental Damage contracts have been modified so that only 1 AD 
+dispatch may occur within the contract year  (starting from the AD order  date). Ensure your customer is aware and in agreement of using his 1 per 
+contract year AD dispatch.  
+• Once the Accidental Damage Limit is reached, Customer may request repair 
+of the supported product for an additional charge. Use the existing process 
+for chargeable solutions, CID, OWR, OOW etc.  
+• You may Override the 1 per contract year AD dispatch (errors, CSAT, Repeats, 
+etc.) but overrides require QL/Manager approval. Please proceed to 
+the Accidental Damage Override  section for instructions.  
+• Override activity is reported on to help ensure compliance.  
+2. After Point of Sale (APOS) claim restriction  
+• Customers with new AD APOS contracts:  
+• Must wait 30 days from the date of AD purchase before they can 
+submit a claim (claim may be submitted on day 31).  
+ Note:  
+  The 30-day waiting period does not apply to customers 
+who extend their AD service period prior to the expiration 
+of the preceding AD service term.  
+• Must not have any pre -existing conditions.   
+• A New  APOS contract is defined as an AD APOS contract where there was a 
+gap in the AD warranty service term.  
+• There is no Override feature for the APOS claim restriction. Note that this is a 
+hard coded Lightning restriction.  
+ Note:  
+  Third-Party Onsite Service Contracts Onsite service Can Not be performed for 
+Accidental Damage scenarios for systems with Accidental Damage coverage 
+that also have a Third -Party onsite service contract.  
+TOC  
+    
+   
+ 
+  
+ Unlimited In -House Accidental Damage Pilot  
+  • Limited to max 5 EDU customers  
+• Min 3.000 and max 5.000 units, no extra sales after a year or longer  
+• Only Latitude and Chromebook  
+• Only new TAG’s, no legacy products, no other products  
+• Only US customers  
+• 4 year contract  
+• Supported via TechDirect and TS  
+• Custom SKU’s offered via bid desk  
+Dell Accidental Damage Custom Bid Greater than 1 incident per contract year  
+In the ABU custom bid desk will provide pricing for Accidental Damage for RFPs requiring 
+more than 1 indent per contract year. This will entail the use of a custom AD sku 
+description which will describe the offer and indicate the entitlement (Custom Accide ntal 
+Damage, Term (1 -5 years) and the number of incidents per contract year (X Claims per 
+year). This new custom sku description will appear in Delta as shown below.  
+• Custom AD SKU Description  
+o Custom Acidental Damage Service, 3 Years / 2 Claims Per Year  
+ 
+ 
+Image 1:  Custom AD SKU Description  
+• Standard AD SKU Description  
+o Accidental Damage Service, 5 year  
+   
+Image 2:  Standard AD SKU Description  
+The custom sku description will appear in Delta in all the entitlement fields as indicated in 
+the (Image 3) below.  
+ 
+Image 3:  Custom SKU Description in Delta (click image to enlarge)  
+If a customer claims the additional incident, tech support will obtain an override approval 
+through the existing process. The total number of override incidents will appear in the AD 
+entitlement details tab as it currently does today. The TS agent and QL w ill ensure that 
+the AD count  plus the  Override Count  does not exceed the number of incidents per 
+contract year indicated in the custom sku description. Agent should pick  other  as the 
+override reason when creating the dispatch.  
+ 
+Image 4:  AD Incident Count Tracker (click image to enlarge)  
+ 
+ 
+Procedure - Repair Model and Dispatching  
+Depot AD dispatches have a higher first -time fix and lower repeat dispatch rate than 
+Onsite. Accidental damage system repair at the Dell Repair Center will help ensure first 
+time fix and a lower Repeat Dispatch Rate. Adapters may be sent out as Parts Only if 
+required.  
+ 
+Dell Repair options include, but not limited to, MIS, RTD, RTD, CIS, CAR and is subject to 
+the customers location and availability.   
+  
+ 
+Repair Model for non -Portables  
+If repair at Dell is possible, have system returned to Dell, otherwise, follow repair model per 
+Lightning/Delta.  
+  
+  Dispatching  
+1. Verify the system is entitled:  
+• Within Scope  
+• Not Break/Fix  
+• AD Availability: Only 1 AD dispatch permitted per contract year  (starting 
+from the AD order date) . Refer to  (Table 1) and AD entitlement tab in 
+Lightning.  
+• If a customer is contacting Dell for an Accidental Damage dispatch 
+but their system is not eligible for an Accidental Damage dispatch, 
+you may use the following verbiage in your communication with the 
+customer.  
+Customer Scripting:  
+"Unfortunately, we are only able to use one Accidental Damage 
+claim per contract year. With the last one used XX/XX/XXXX. We 
+apologize for the inconvenience; however, we still have the option of 
+providing a quote for the repair to get this issue resolved. Is this 
+something you would be interested in?"  
+ 
+Note:  Insert the date of the previous Accidental Damage dispatch that is 
+causing the system to not be eligible in the XX/XX/XXXX portion of the 
+script verbiage.  
+2. Check the box for Accidental Damage when creating the dispatch.  
+• Premium Support - agents must select  Premium Support Plus Depot  from 
+the Category  list to activate 5 Business Day service. If this is not selected the 
+dispatch time will default to standard 10 Business Days.  
+• Selected  Premium Support Plus Depot  will automatically change the 
+Service Options  to 5 Business Days -10x5  and select  PAD  in the  DPS 
+Type. 
+ 
+3. Once the AD checkbox is checked (for an AD dispatch).  
+4. Select the appropriate option from the  Reason for Accidental Damage  drop down.   5. If this is an Accidental Damage override dispatch, select the appropriate option 
+from the  AD Override Reason .  
+6. If the issue is NOT confirmed to be Accidental Damage,  DO NOT  check the AD box.  
+• If the system is not entitled, inform customer of their pay for service options.  
+7. Ensure customer is in agreement to use their 1 per contract year AD dispatch.  
+8. Document Case Logs while the request is in pending status to ensure your notes are 
+captured:  
+• How did the damage happen?  Be specific.  
+• If Override is used, why? Be specific. Who approved the Override?  
+• Document customer heat check.  
+9. Assign the appropriate repair model.  
+10. Please inform the customer they will be receiving an automated email with the AD 
+dispatch details.  
+New AD APOS  - If the customer is submitting a claim within the first 30 days after the 
+purchase date, advise the customer that he/she will have to wait until day 31 to submit a 
+claim.  
+ Note:  
+  • If an Accidental Damage dispatch is created and it  does not fully 
+resolve the Accidental Damage issue  (example: the onsite repair 
+technician discovers additional damage) the subsequent dispatch 
+should also be an Accidental Damage dispatch.  
+• If the additional dispatch  IS NOT related to the Accidental 
+Damage  originally reported, Agent should issue a standard dispatch 
+per the system entitlement.  
+TOC  
+ 
+Override Process    Notice:  
+  Overrides require QL/Manager approval.  
+1. If an Agent determines an AD Override is necessary, Agent must select an Override 
+reason from the drop down. Override activity is monitored.  
+2. Agent that is requesting the Override must document the detailed Override Reason 
+in the notes. Please be specific.  
+3. QL/Manager should refer to the Troubleshooting field to see the Override Reason.  
+ 
+ 
+  
+Item  Override Reasons  
+1 Channel and Sales related escalations  
+2 CSAT  
+3 Executive escalations  
+4 Open AD Dispatch  
+5 Original dispatch for AD miscategorized  
+6 Others ‐ use only incase nothing else applies  
+7 RD- Additional parts required to fix open AD  
+Table 4:  Override Reasons  
+  
+TOC  
+Related Articles  
+Help Related ArticlesLists other related articles with different fixes. Separated by commas.  
+Related Articles:  
+• Insurance regulation for Australia only: Accidental Damage - Dell APJ CSG Policy   
+• Dell International Support Policy - Dell Global Policy   • Validating Service Coverage - Dell Global Policy  
+• Portable System Battery Policy and Procedure - Dell Global Policy  
+• System Damage Due to Natural Disasters - Dell Global Policy  
+• BioHazard/Hazardous Material - Dell Global Policy  
+• Dell System Exchange Policy - AMERICAS and BRAZIL Policy  
+• Approval Matrix - Dell Global Policy (CSG)  
+• Dell Global Field Replaceable Parts Customer Induced Damage Asset Recovery 
+(CIDAR) - Dell Global Policy  
+• Dell Consumer Warranty (Basic, Premium, Premium Plus) Scope of Support – Dell 
+Global Policy  
+• Contracts:  
+o Commercial Service Contracts  
+o Consumer Service Contracts  
+• Training Link:  
+o https://dell.sabacloud.com/Saba/Web_spf/PRODTNT091/common/leclassd
+etail/regdw000000016367398  
+• South Africa AIG Denial of Service Email  
+o Janine.stanley@aig.com  
+TOC  
+Translated Video  
+Help Translated VideoProvide a translation video if applicable.  
+ 
+Additional Info  
+Help Additional InfoAdditional Info can be viewed by the article’s designated audience.  
+Many dispatches are initially categorized as hardware warranty dispatches, but upon 
+inspection at the Depot, it is discovered that the cause is actually Accidental Damage. This 
+creates challenges in accurately assessing dispatch rates and may impact the co st  associated with Accidental Damage.  
+ 
+The Accidental Damage Operations Team will now manually adjust the customer’s 
+Accidental Damage warranty in such cases.  
+ 
+Here’s how the process works:  
+1. When a dispatch is created (whether through assisted or unassisted channels), an 
+automated email  (Image 1: ) (Request for Repair) is sent to the customer, providing 
+details about their service request.  
+2. The email includes the following information:  
+• The service repair booked for your system was done so using the limited 
+hardware warranty. If repair teams find the issue is not covered under your 
+limited warranty, but the issue is covered under accidental damage 
+protection, Dell will proceed to repair t he system using your accidental 
+damage protection, if available. If the system is not covered by accidental 
+damage protection, or, if your accidental damage protection has been 
+consumed, Dell will contact you with options to pay for the repair.  
+3. Customers are informed that if damage is the cause of the service repair, their 
+Accidental Damage warranty will be utilized.  
+• Note:  Undocumented damage (whether related to the initial issue or not) will 
+be repaired under Accidental Damage Warranty or paid services.  
+4. After repairs are completed, a closing email is sent to the customer ( Image 2: ). If 
+accidental damage caused the issue, the email specifies that their Accidental 
+Damage coverage for the current contract year was used for the repair.  
+5. The email includes the following additional information:  
+• The issue detected on the system you returned to Dell was not covered under 
+the limited hardware warranty. To expedite the repair process, we utilized 
+your Accidental Damage entitlement.  
+6. Both emails are logged with the case and dispatch numbers.  
+• Access to these emails helps when advising customers attempting to book 
+additional dispatches within the same contract year.  
+In cases where damage is detected on the system and the customer lacks Accidental 
+Damage coverage or has already exhausted their coverage for the current contract year, the  customer will be offered the option to pay for the repairs through the Point of Need (PON) 
+team. This existing process ensures timely resolution.  
+ 
+ 
+Image 1:  Automated Email Once Dispatch is Created  
+ 
+ 
+Image 2:  Closing Email Once Dispatch is Completed  
+ 

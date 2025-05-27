@@ -1,0 +1,185 @@
+ 
+BioHazard/Hazardous Material - Dell Global Policy  
+Table of Contents (TOC)  
+• Background  
+• Policy  
+o Bio Hazard Criteria  
+o Escalating to the Safety Team  
+o Consequences of Noncompliance with Policy  
+• Procedure  
+o Bio Hazard Exchange Procedure  
+• Related Articles  
+• Additional Information  
+Dell is committed to product quality and to the safety of our customers and employees. As 
+part of that commitment, Dell has a dedicated team to respond to and investigate reports 
+of issues with Dell products if the report indicates that a safety concern ma y exist. 
+However, biological contamination that may occur in the field is outside of this scope. Dell 
+is not equipped to handle biological or hazardous substances in its receiving facilities nor 
+is the Dell onsite service providers or portables repair depo ts. Therefore, Dell will not take 
+on the liability for disposal of any contaminants, nor do we want to expose our employees 
+or partners to such materials.  
+ 
+Dell products are designed to be safe for their intended use. They are also designed and 
+manufacture d to meet all appropriate legal and regulatory requirements in the areas where 
+they are sold. While perceived biological contamination complaints are rare, they must be 
+treated seriously to protect Dell, Dell employees and Dell’s customers. To ensure these  
+customers reported issues are responded to properly, Dell employees and Dell authorized 
+partners must understand the steps to follow if they encounter a biological contamination 
+concern reported by a customer.  
+ 
+In the course of communicating with a custom er, the customer may make comments that 
+contain words or statements that may indicate the customer is concerned the product is 
+biologically contaminated. These include, but are not limited to blood or other bodily fluids, i.e. urine, vomit, etc., or it is contaminated by any other perceived hazardous substance.  
+ 
+If the customer makes comments that indicate they are concerned the product is 
+biologically contaminated, including but not limited to statements of the product bei ng 
+contaminated with:  
+• Blood or other bodily fluids (i.e., urine, vomit, etc.) from Humans or any living 
+organisms.  
+• Is contaminated by any other perceived hazardous substance, through no fault of 
+Dell.  
+Dell is not obligated to cover the repair or replacement of the system or part and out of 
+warranty (point of need) service options are not available through Dell.  
+If a situation arises that there is a known contamination, the system cannot be repaired or 
+replaced.  The customer should not attempt to ship the system to a Dell repair facility, such 
+as a Depot, MIS/CIS center as Dell may not be able to return the system to the customer 
+due to shipping restrictions.  
+  
+ 
+Table of Contents  
+ 
+Policy  
+Regulation:  
+Biologically Contaminated systems are NOT eligible for 
+Accidental Damage Claims.  
+If the contaminated system has an active Complete Care contract and the damage is 
+accidental, the system or component should be exchanged by the Bio -Hazard exchange 
+procedure below in the Procedure Section.  
+1. If the contaminated system has a standard hardware warranty without a Complete 
+Care contract, and the damage was caused by the customer through no fault of 
+Dell, Dell is not obligated to cover the repair or replacement of the system or part 
+and Out of warr anty service options are not available through Dell.  2. In the very unlikely event the contamination is perceived as being caused by Dell 
+(e.g., system is contaminated out -of-box), use the Bio -hazard Exchange Procedure. 
+Situations that could be classified under safety hazard guidelines (e.g., leaking 
+battery) s hould be handled by the safety capture process. For more information, 
+refer to  "Product Safety Policy and Procedure - Dell Global Policy"  Article ID: 
+000048660.  
+3. If a component of a contaminated system requires repair or replacement due to 
+hardware failure or manufacturing defect (not the contamination) and has a 
+standard hardware warranty, Dell will cover the repair or replacement. In these 
+circumstances, Dell wil l not issue onsite or depot service. Instead use the Bio -
+hazard Exchange Procedure.  
+Dell is not equipped to handle hazardous substances in its receiving facilities nor is the 
+Dell onsite service providers or portables repair depots. Therefore, Dell will not take on the 
+liability for disposal of any contaminants, nor do we want to expose o ur employees or 
+partners to such materials. Therefore, do not ask customers to return products that are 
+potentially contaminated with any of the biological hazards described above to any of 
+Dell’s receiving centers or Repair Depots.  
+ Note:  
+  • Agents SHOULD NEVER  lead the customer's conversation, e.g. did you 
+bleed on the system? Let the customer tell you what happened.  
+• Agents SHOULD NEVER  tell customers their issue is a bio -hazard 
+issue.  
+• Agents SHOULD NEVER  offer  ANY  type of compensation to the 
+customer including EXG without proper approval from the Product 
+Safety team.  
+• Agents SHOULD NEVER  provide advice or discuss with the customer 
+any information regarding:  
+o Legal course of action.  
+o Dell liability.  
+o Insurance claim.  
+Bio-Hazard criteria found in the customer's verbal, written, or recorded records  1. The customer must have a Complete Care Contract for accidental damage, or the 
+customer indicates the biological contamination is perceived as being caused by 
+Dell (e.g., system is contaminated out -of-box)  
+AND  
+2. One or more of the following customer claims:  
+• Blood or other bodily fluids, i.e. urine, vomit, etc., were accidentally spilled 
+on the product or the product is contaminated by any other perceived 
+hazardous substance.  
+Escalating to the Safety Team  
+If you feel you are not getting the resolution to the issue you may ask for the case to be 
+escalated to the Safety Lead (through WW_Product_Safety_Captures@dell.com).   For more 
+information refer to  Product Safety Policy and Procedure - Dell Global Policy  Article ID: 
+000048660.  
+Consequences of Noncompliance with Policy  
+ Regulation:  
+  Failure to comply with this policy and follow the guidelines may place our 
+customers at risk, tarnish Dell's reputation, and ultimately expose Dell to 
+legal liability. And, as with any Dell corporate policy, failure to comply may 
+result in disciplinary act ion.  
+ 
+Table of Contents  
+ 
+Keywords  
+Help KeywordsFollow SEO guidelines to add relevant keywords for indexing and searching.  
+BioHazard  
+Procedure  
+ Notice:    Never put the customer at risk of injury by having them physically repeat 
+the sequence of events.  
+1. Have the customer discontinue using the system and disconnect all power sources.  
+2. Have the customer explain the events leading up to the contamination (for example, 
+establish the situation Who, What, When, Where).  
+• Who  was involved in the incident?  
+Example : "I left the system on the table and my <neighbor>…"  
+• What  exactly happened?  What  were you doing when the problem or incident 
+occurred?  
+Example : "I was on the table..."  
+• When  did the problem or incident occur?  
+Example : "It happened 3 days ago. I just haven't had time to call you."  
+• Where  (in relation to the system) did the problem or incident occur?  
+Example : "all over the Keyboard. " 
+3. Instruct the customer to provide the following:  
+• Clear pictures of the product, including the contaminated area and a picture 
+of the service tag.  
+  
+ Note:  
+  Pictures need to show the entire unit not just abstracts of the 
+contaminated area.  
+• If the caller is not the original owner, contact the original owner to see if the 
+system is still in their possession or if it has been resold or gifted to someone 
+else. If you find out it was resold or gifted, see if they will tell you who they 
+resold or gifted it to (if they don’t remember a name, see if they remember the 
+city/state where the new owner lives).  
+4. Log all customer comments  relating to the failure in the  Dell Internal 
+Comments/SFDC  Notes.  
+5. You must begin the customer comments with  "Customer said".  6. Include any statements offered by the customer regarding personal injury and 
+property damage unless the injury was Customer Induced, e.g. while typing on my 
+computer, my cat jumped up and urinated on the keyboard and I received a shock.  
+7. Set the customer expectation that an agent will call them back after the appropriate 
+approvals have been received for the dispatch. (The Dell Services Safety Analyst will 
+respond to submitting tech support agent within the next business day. (Business 
+days are M-F)) 
+8. Inform the customer that they should not attempt to clean or repair these items.  
+9. Provide the customer with the SR/case number and the dispatch number if issuing a 
+dispatch.  
+  
+Customer Experience:  
+Accidental Damage contracts within  Americas  do not include Biohazard 
+coverage. For more information on Accidental Damage coverage please 
+see  Accidental Damage (Complete Care/Cover) – Dell Global Policy  
+ 
+If the contaminated system has an active Accidental Damage contract and the damage is 
+accidental, the system or component should be exchanged by following the Bio -Hazard 
+exchange procedure.   
+Bio-Hazard Exchange Procedure  
+Prior to issuing any EXG, current ownership and validation of the issue must be 
+established. Follow the steps outlined below:  
+1. Request clear pictures of the product where it has been contaminated.  
+2. Request a clear picture of the service tag of the affected product.  
+3. If the caller is not the original owner, contact the original owner to see if the system 
+is still in their possession or if it has been resold or gifted to someone else. If you 
+find out it was resold or gifted, see if they will tell you who they resold or gifted it to (if 
+they don’t remember a name, see if they remember the city/state where the new 
+owner lives).  
+• Tell the customer not to return the part or product and to dispose of it according to 
+their own hazardous substance disposal procedures as Dell is not equipped to receive biologically hazardous products, parts or equipment and therefore will not 
+receive them in our return  facilities or repair depots.  
+ 
+Table of Contents  
+  
+Related Articles  
+Help Related ArticlesLists other related articles with different fixes. Separated by commas.  
+• Product Safety Policy and Procedure - Dell Global Policy  Article ID: 000048660  
+• Accidental Damage (Complete Care/Cover) – Dell Global Policy  Article ID: 
+000048769  
+ 

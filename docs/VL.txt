@@ -1,0 +1,196 @@
+Table of Contents:  
+1. What is happening?  
+2. How can customers send their images?  
+3. What happens next?  
+4. How do you upload an image using Email?  
+5. How do you upload an image using WhatsApp?  
+6. How do you upload an image using Apple Business Chat (ABC)?  
+7. How do you upload an image using Google Business Messenger (GBM)?  
+8. How do you upload an image using the Line Messenger app?  
+9. How do you upload an image using WeChat?  
+10. What does this process look like in Lightning?  
+11. What are the static picture file formats supported?  
+ 
+  
+What is happening?  
+When customers state that their laptop LCD has failed and exhibits symptoms of:  
+• No Video  
+• Flickering Video  
+• Horizontal or Vertical Lines  
+• Distorted Screens  
+• Light Leakage  
+• 2 Amber, 7 White LCD Diagnostic  Code  
+Agents should use  DTC  and type in the failure modes.  
+The guided solution guides the agent to ask the customer for an image of the image on the 
+LCD screen.  
+   
+How can customers send their images?  
+After the customer has taken an image of the full screen including the bezel or hinge area, 
+agents should encourage customers to use  Email,  or WhatsApp  for customers in EMEA, 
+NA, LATAM and India,  WeChat  for customers based out of China, or  Line  for customers 
+based out of Japan social media channels.  
+Alternatively, customers who have  Apple  devices and speak the English language 
+anywhere can also use Apple Business Chat (ABC) Customers who have  Android  mobile 
+devices in these countries only: USA, Canada, United Kingdom, Australia, New Zealand, 
+and India only - can use Google Business Messenger (GBM).  
+Note: All customer messages sent to a Dell Business account are two -factor 
+authenticated.  
+  
+ 
+  
+What happens next?  
+The image routes to the Visual Listening Engine (VL/AI) where the results are available in 
+real-time to an agent with a prediction value that confirms if the LCD is damaged. A log will 
+also be auto that is created in the case with a link to the image.  
+Note:  It is critical that customers provide images of the LCD with a neutral background 
+without photos or images. This ensures that the AI does not interpret something in the 
+background image as a Crack in the LCD. Advise customers to capture images during the 
+LCD BIST.  
+Note:  The crack may be hidden under bezels.  See  Distorted Video, Horizontal or Vertical 
+Lines on the LCD Panel, May Actually be Broken Glass  for more information.  
+ 
+ 
+Figure 1 and 2.  Same LCD from the same customer. The AI identified the figure with the 
+flower background as damaged. However, when the second figure with the neutral 
+background was received, it was correctly identified as nondamaged and an LCD issue.   
+Figure 3.  DTC Screenshot of Visual Listening LCD damage check  
+If AI identifies the image as a Cracked Screen, follow one of these policies:  
+• Accidental Damage (Complete Care) - Dell Global Policy  
+• Dell Global Field Replaceable Parts Customer Induced Damage Asset Recovery 
+(CIDAR) - Dell Global Policy   
+If AI identifies the image as a Non -Cracked screen, or if the customer is unable or unwilling 
+to send an image, the path leads the agent through the standard troubleshooting.  
+If the customer does not have WhatsApp/WeChat/Line/ABC/GBM - and only if there is 
+suspicion of cracked glass, should send images by email. Guidance with photo examples 
+within the path to help the agent identify physical damage.  
+ 
+  
+How do you upload an image using Email?  
+1. Have the customer take a photo of the LCD damage based on the above conditions  
+2. Have the customer open their Email  
+3. Have the customer open a new blank email  
+4. In the To field, ask the customer to type the email address Picture@dell.com  
+5. Ask the customer to use "LCD issue {Service Tag}" as the subject line  
+6. Paste the image/s or an image attachment to the body of the email. Advise the 
+customer to avoid writing any details in the body of the email. (Example below if 
+using image of a damaged screen).  
+ 
+Figure 4.   Notebook LCD damage  
+7. Send the email to Picture@dell.com  
+Note: The Visual Listening (VL) process will be live on DTC by  January 3  - continue to use 
+Email for VL where the customer's preferences to use Email.  Note: Visual Listening will be launching first in English. All other languages are available 
+before the end of Q4.  
+  
+ 
+  
+How do you upload an image using WhatsApp?  
+For customers speaking English, Brazilian Portuguese, French, Spanish, German, Italian, 
+Polish, Dutch, Danish, or Swedish:  
+1. Share one of the following with the customer to establish a chat session:  
+• Number: + 919741655960  
+a. Save the number as a contact in the phone.  
+b. Open the WhatsApp application.  
+c. Click the search icon. Type the contact name that you saved for the 
+number that is provided by the rep (might need 30 sec to min for 
+contact to show up).  
+• Link:  https://wa.me/919741655960  
+a. Open the link in a browser on the phone (to be performed only if 
+WhatsApp is already installed on the phone).  
+• QR code  
+a.  Open the link on your system - https://dell.to/3K6X9Br  
+b. Share it with the customer by email.  
+c. Have customers to scan the QR code by opening WhatsApp on their 
+phone.  
+d. Click 3 vertical dots at the top right -hand corner and click " Settings ". 
+e. Click the QR code and click " scan code " at the top  
+f. Scan the QR code to start the chat using steps below.  
+2. Type "Hello" (in the customers native language) so that WhatsApp can detect the 
+appropriate language.  3. WhatsApp gives the customer options, from the options, have the customers select 
+"LCD related."  
+4. WhatsApp asks for the Service tag, have the customer type in the service tag.  
+5. WhatsApp asks customers to share images, have customers share the images.  
+6. In SFDC under Case Details, review the AI recommendation to determine if the LCD 
+is reported as Cracked/Damaged.  
+7. Review the uploaded photo and compare it with the reported AI result.  
+See the  video  for a view of the customer side of this interaction.  
+  
+ 
+  
+How do you upload an image using Apple Business Chat (ABC)?  
+1. If the customer is using ABC, open a browser and type the 
+link  https://dell.to/36nAzEj (valid for any English speaking Apple user globally ). 
+Customers based in the US or Japan can also navigate to the  Dell Support Site . 
+• Have the customers go to https://www.dell.com/support.  
+• Click "contact us" on the right side and then click "Contact Technical 
+Support".  
+• Update the service tag (If asked) and click next.  
+• Select the issue from the drop -down "Video display issues" and click next o 
+Scroll down and you will see the QR code which the customers can scan 
+(Available only for US customers).  
+2. The "Dell Technical Support" chat window opens on ABC.  
+3. Type "#LCD" on ABC to start the conversation.  
+4. ABC gives the customer options, from the options, have customers select "LCD 
+related."  
+5. ABC asks for the Service tag. Have the customer enter the service tag.  
+6. ABC asks customers to share images, have customers share the images.  7. In SFDC under Case Details, review the AI recommendation to determine if the LCD 
+was reported as Cracked/Damaged.  
+8. Review the uploaded photo and compare it with the reported AI result.  
+See the  video  for a view of the customer side of this interaction.  
+  
+ 
+  
+How do you upload an image using Google Business Messenger (GBM)?  
+For customers who have Android mobile devices, speak English and are located in: United 
+States, Canada, United Kingdom, Australia, New Zealand or India only:  
+1. Have the customer navigate to google.com on their Android mobile device and 
+search for " Dell Technical Support ". 
+2.  Click the " Chat with a live agent " option.  
+3. In the GBM chat window, enter the " #LCD." 
+4. GBM gives the customer options. From the options, have customers select " LCD 
+related." 
+5. Next GBM will ask for the Service tag. Have the customer enter the service tag.  
+6. GBM asks the customer to share images, have the customer share the images.  
+7. In SFDC under Case Details, review the AI recommendation to determine if the LCD 
+was reported as Cracked/Damaged.  
+8. Review the uploaded photo and compare it with the reported AI result.  
+See the  video  for a view of the customer side of this interaction.  
+  
+ 
+  
+How do you upload an image using the Line Messenger app?  
+1. Follow the Line Dell Technical Support official account by searching for " デル・テク
+ノロジーズ ." Alternately, The Dell official Line account can be accessed by 
+https://pDetermine age.line.me/dell  2. When in the Dell Technical Support Official account, type " #LCD" into the chat.  
+3. The virtual assistant requests the system  Service Tag  or confirm the Service Tag if 
+entered previously.  
+4. Upload a photo of the LCD exhibiting the reported issue to the chat.  
+5. In SFDC under Case Details, review the AI recommendation to determine if the LCD 
+was reported as Cracked/Damaged.  
+6. Review the uploaded photo and compare it with the reported AI result.  
+  
+ 
+  
+How do you upload an image using WeChat?  
+1. Follow the WeChat Dell Technical Support official account by searching for " 戴尔技
+术支持" within the app.  
+2. When in the Dell Technical Support Official account, type "7777" into the chat.  
+3. The virtual assistant requests the system Service Tag or confirm the Service Tag if 
+entered previously.  
+4. Upload a photo of the LCD exhibiting the reported issue to the chat.  
+5. In SFDC under Case Details, review the AI recommendation to determine if the LCD 
+was reported as Cracked/Damaged.  
+6. Review the uploaded photo and compare it with the reported AI result.  
+  
+ 
+  
+What does this process look like in Lightning?  
+The  simulation  shows you what to expect in Lightning.  
+  
+ 
+  What are the static picture file formats supported?  
+All common image formats are supported including HEIC (iPhone), JPG, JPEG, PNG, and 
+BMP.  
+Note:  Non-image file formats or embedded images are NOT supported including ZIP, PDF, 
+GIF, TIFF, JIFF, HTML and BMP. For more information, see  Visual Listening FAQ . 
+  
+ 

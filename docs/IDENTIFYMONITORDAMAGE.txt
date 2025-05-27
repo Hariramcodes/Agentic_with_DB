@@ -1,0 +1,143 @@
+Table of Contents:  
+1. What is Customer Induced Damage?  
+2. How do I identify different types of Customer Induced Damages?  
+ 
+What is Customer Induced Damage?  
+Customer Induced Damage is any damage that is not the direct result of a manufacturing 
+defect or failure. Such damage is most often the result of an unintentional act such as a 
+drop or an impact to the LCD screen or any other part of the product which may render the 
+device non -functional. Such types of unintentional damage are only covered if the product 
+has an additional Accidental Damage Protection plan. Customer Induced Damage is not to 
+be confused with Laptop LCD or Flat Panel with dead or stuck pixel. For more information 
+about dead or stuck pixels, see Dell knowledge base article  Dell Display Pixel Guidelines . 
+   
+Is Customer Induced Damage covered under the Basic Warranty for my computer?  
+No, Customer Induced Damage is only covered for customers who have purchased 
+Accidental Damage Protection for that specific product.  
+ 
+For more information about Dell Limited Hardware Warranty and Dell's Accidental Damage 
+service offering, go to the  Warranty & Support Services  page.  
+ 
+Back to Top  
+ 
+How do I identify different types of Customer Induced Damages?  
+Flat panel monitors or Laptop LCD panels can encounter different types of damage  that 
+may or may not be considered customer induced damage. The tables below illustrate the 
+different types of damage that can occur on a Laptop LCD Panel or a Flat Panel Monitor.  Table 1:  Not customer induced damage examples  
+Symptom  Description  Example  
+Damaged 
+Packaging  Packaging has evidence of physical damage on the outside 
+and/or inside that results in the contents being damaged.   
+ 
+   
+Table 2:  Examples of customer induced damage  
+Symptom  Description  Example  
+Hinge Area 
+Damage  Opening an LCD panel more than the maximum 
+possible lid opening angle on a Dell Laptop (for 
+example 135 degrees) can cause the panel to crack 
+near the hinges.   
+Broken LCD  Internal cracks are typically due to excessive force on 
+the screen.  
+This can be the result of something pressing the 
+screen, an unintentional drop, attempting to close the 
+laptop LCD while an object is on the keypad area, or 
+even holding the laptop by its screen.   
+ 
+ 
+Liquid Spill  Evidence of liquid spill or evidence of graphical 
+distortion as shown which is more visible on a white 
+background.   
+ 
+ 
+ 
+ 
+ 
+ 
+Foreign Material 
+on the 
+LCD/Display  The material does not come off during the normal 
+cleaning process. Most often could be adhesives from 
+labels.   
+ Table 2:  Examples of customer induced damage  
+Symptom  Description  Example  
+Broken Plastics  Cracks or other physical damage that is caused to the 
+plastics of the monitor as shown.   
+Scratched 
+Polarizer or Touch 
+Screen  The polarized film or the touch screen of the monitor 
+can get easily damaged by sharp objects coming in 
+contact with the monitor.   
+Damaged 
+Connectors  Damage to  connectors that are caused by abuse or 
+missing control panel buttons that are caused by 
+abuse.   
+Cracked Cover 
+Glass  Cracks/dents are seen on the glass panel of the 
+monitor.  
+The top layer of the monitor is a cover glass which can 
+get damaged and once cracked may cause personal 
+injury if not handled properly.   
+Broken Stand  Broken stand of the monitor is caused by improper 
+installation of the monitor stand or an unintentional 
+drop.   
+Part Number 
+Mismatch  The part number of the monitor that was supposed to 
+be received is wrong and inconsistent either on the 
+monitor itself or a mismatch in the serial number. 
+Inconsistent information.   
+Mura  Mura is an effect that is commonly known as 
+"clouding."  
+This effect is a low -contrast, irregular pattern, or region 
+that causes uneven screen uniformity under certain 
+conditions.  
+It is mostly caused by long -term operation under high 
+ambient temperatures.   
+Image Burn on the 
+LCD (Residual 
+Image)  Screen burn -in, image burn -in, or ghosting is a 
+permanent discoloration of certain areas of the screen.   Table 2:  Examples of customer induced damage  
+Symptom  Description  Example  
+See the following article for troubleshooting:  
+Image Retention or Burn In on Dell Monitors  
+Scratch or Dent on 
+the Plastic  Physical damage that is caused to the plastics of the 
+monitor due to an unintentional act.   
+ 
+   
+More Customer Induced Damage Examples  
+ 
+ 
+ 
+ 
+ 
+ 
+Back to Top  
+Customer Experience  
+If the customer is not happy with the resolution, follow your L2 escalation path to your 
+Team Leader as a Customer Experience (CE) failure.  
+Verbiage:  "The issue has not been fully resolved to your satisfaction. I must escalate this 
+issue to my support staff for instruction."  
+NOTE:  If the issue continues, then follow your escalation path through your L2/QL to the 
+L3/REC team (as dictated by the computer's warranty).  
+ 
+Back to Top  
+   
+Related Internal Articles  
+• Dell PPID Policy and Procedure - Dell Global Policy  
+•   
+• Image Retention or Burn In on Dell Monitors  
+• Identify the Maximum Possible Lid Opening Angle on a Dell Laptop  
+• Plastics Policy - Dell Global Policy  
+• Accidental Damage (Complete Care/Cover) - Dell Global Policy  
+• Dell Laptop Best Practices for Care, Use, and Handling (Preventive Care)  
+ 
+Back to Top  
+Keywords  
+Help KeywordsFollow SEO guidelines to add relevant keywords for indexing and searching.  
+Identify Customer Induced Damage, Customer Induced Damage, Customer, Induced, 
+Damage, CID, CIDAR, Laptop LCD Panel, Flat Panel Monitor, Monitor, Display, LCD, Flat 
+Panel, Screen, Damaged Monitor, Damaged LCD, Damaged Screen, hinge issue, crack 
+hinge, hinge  screw issue, hinge crack, hinge broken, hinge area damage  
+Supplemental Content  
+ 
