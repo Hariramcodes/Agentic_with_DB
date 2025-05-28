@@ -7,6 +7,7 @@ logger = logging.getLogger(__name__)
 def create_group_chat_manager(group_chat, llm_config):
     def custom_speaker_selection(last_speaker, groupchat):
         messages = groupchat.messages
+        print(f"Custom speaker selection: last_speaker={last_speaker.name}, messages={len(messages)}")
         if not messages:
             return groupchat.agents[0]  # UserProxyAgent
         last_message = messages[-1].get("content", "")

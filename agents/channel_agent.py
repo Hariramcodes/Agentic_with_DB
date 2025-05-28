@@ -4,8 +4,7 @@ import re
 
 logger = logging.getLogger(__name__)
 
-def create_channel_agent(llm_config):
-    
+def create_channel_agent(llm_config, agent_name="ChannelAgent"):
     def determine_language(region, llm_config):
         try:
             language_detector = ConversableAgent(
@@ -26,20 +25,16 @@ def create_channel_agent(llm_config):
     def extract_channels_and_details(chunks):
         channels = []
         for chunk in chunks:
-            # Extract potential channels (case-insensitive)
             channel_matches = re.findall(r'\b(WhatsApp|Email|WeChat|Line|Apple Business Chat|Google Business Messenger)\b', chunk, re.IGNORECASE)
             for channel in set(channel_matches):
                 channel = channel.lower()
                 details = {}
-                # Extract phone numbers (any format starting with +)
-                phone_matches = re.findall(r'\+\d{1,3}[\s\d()-]+', chunk)
+                phone_matches = re.findall(r'\+[\d\s()-]{8,20}', chunk)
                 if phone_matches and channel in ["whatsapp", "line", "wechat"]:
                     details["phone"] = phone_matches[0].strip()
-                # Extract emails
                 email_matches = re.findall(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}', chunk)
                 if email_matches and channel == "email":
                     details["email"] = email_matches[0].strip()
-                # Extract instructions (lines following channel mention)
                 lines = chunk.split('\n')
                 instructions = []
                 for i, line in enumerate(lines):
@@ -49,16 +44,16 @@ def create_channel_agent(llm_config):
                     channels.append({
                         "name": channel.capitalize(),
                         "details": details,
-                        "instructions": instructions[:2]  # Limit to 2 for brevity
+                        "instructions": instructions[:2]
                     })
         return channels
 
     return ConversableAgent(
-        name="ChannelAgent",
+        name=agent_name,
         llm_config=llm_config,
         human_input_mode="NEVER",
         code_execution_config=False,
-        system_message="""You are the ChannelAgent in Dell's technical support workflow for accidental damage claims. Your role is to provide region-specific image upload instructions in ENGLISH ONLY for Scenario 1 (NO_IMAGE_FOUND), using chunks from 'VL.pdf' fetched by RetrievalAgent.
+        system_message="""You are the ChannelAgent in Dell's technical support workflow for accidental damage claims. Your role is to provide region-specific image upload instructions in ENGLISH ONLY for Scenario 1 (NO_IMAGE_FOUND), using chunks from 'VL.pdf' fetched by RetrievalAgent via cosine similarity search.
 
 **Processing Instructions**:
 1. Wait for @GroupChatManager prompt:
