@@ -22,6 +22,7 @@ DOC_MAP = {
 
 async def query_vector_db(pdf_name, query, k=5, region=None, language=None):
     try:
+        logger.info(f"query_vector_db called with pdf_name={pdf_name}, query={query}, k={k}, region={region}, language={language}")
         conn = await asyncpg.connect(DB_CONN)
         table_name = TABLE_MAP.get("ChannelAgent") if pdf_name in DOC_MAP["ChannelAgent"] else None
         if not table_name:
@@ -29,8 +30,7 @@ async def query_vector_db(pdf_name, query, k=5, region=None, language=None):
             await conn.close()
             return {"chunks": [], "ids": []}
 
-        # Construct query with region and language
-        full_query = f"{query} in location {region} language {language}"
+        full_query = f"{query} in location {region} language {language} channel contact details"
         model = SentenceTransformer(EMBED_MODEL)
         query_embedding = model.encode(full_query).tolist()
         query_embedding_str = json.dumps(query_embedding)
