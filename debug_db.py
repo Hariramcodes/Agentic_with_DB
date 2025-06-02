@@ -7,7 +7,7 @@ from sentence_transformers import SentenceTransformer
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-DB_CONN = "postgresql://postgres:myragpw@localhost:5432/ragdb2"
+DB_CONN = "postgresql://postgres:myragpw@0.0.0.0:5434/ragdb2"
 EMBED_MODEL = "thenlper/gte-large"
 
 async def check_vector_extension(conn):

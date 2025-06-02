@@ -7,28 +7,67 @@ def create_group_chat_manager(group_chat, llm_config):
     def custom_select_speaker(self, last_speaker, groupchat):
         try:
             messages = groupchat.messages
-            logger.info(f"Custom speaker selection: last_speaker={last_speaker.name}, messages={len(messages)}")
+            logger.info(f"Custom speaker selection: last_speaker={last_speaker.name}, total_messages={len(messages)}")
 
-            # Get allowed transitions
-            allowed_speakers = groupchat.allowed_or_disallowed_speaker_transitions.get(last_speaker, [])
+            if not messages:
+                logger.info("No messages, selecting first agent")
+                return groupchat.agents[0]
 
-            if not allowed_speakers:
-                logger.warning("No allowed speakers for transition")
+            last_message_content = messages[-1].get("content", "")
+            logger.info(f"Last message content preview: {last_message_content[:200]}...")
+
+            # Check for termination first
+            if "TERMINATE" in last_message_content:
+                logger.info("TERMINATE found, ending conversation")
                 return None
 
-            # Select next speaker based on message content
-            last_message = messages[-1]["content"] if messages else ""
-            for speaker in allowed_speakers:
-                if f"@{speaker.name}" in last_message:
-                    logger.info(f"Selected speaker: {speaker.name}")
-                    return speaker
+            # Agent selection logic based on message content and speaker
+            if last_speaker.name == "UserProxyAgent":
+                # UserProxy always goes to ChannelAgent
+                channel_agent = next((agent for agent in groupchat.agents if agent.name == "ChannelAgent"), None)
+                logger.info(f"After UserProxy, selecting ChannelAgent")
+                return channel_agent
 
-            # Default to first allowed speaker
-            selected = allowed_speakers[0]
-            logger.info(f"Default selected speaker: {selected.name}")
-            return selected
+            elif last_speaker.name == "ChannelAgent":
+                # Check if ChannelAgent is requesting chunks or providing final response
+                if "@ChannelAgent_RetrievalAgent:" in last_message_content:
+                    # ChannelAgent requesting chunks -> RetrievalAgent
+                    retrieval_agent = next((agent for agent in groupchat.agents if "RetrievalAgent" in agent.name), None)
+                    logger.info(f"ChannelAgent requesting chunks, selecting RetrievalAgent")
+                    return retrieval_agent
+                elif "@GroupChatManager:" in last_message_content and "Upload Instructions:" in last_message_content:
+                    # ChannelAgent providing final response -> DecisionOrchestrator
+                    decision_agent = next((agent for agent in groupchat.agents if agent.name == "DecisionOrchestrator"), None)
+                    logger.info(f"ChannelAgent providing final response, selecting DecisionOrchestrator")
+                    return decision_agent
+                else:
+                    logger.warning(f"ChannelAgent response doesn't match expected format")
+                    return None
+
+            elif "RetrievalAgent" in last_speaker.name:
+                # RetrievalAgent always goes back to ChannelAgent
+                if "@ChannelAgent: Retrieved chunks:" in last_message_content:
+                    channel_agent = next((agent for agent in groupchat.agents if agent.name == "ChannelAgent"), None)
+                    logger.info(f"RetrievalAgent returned chunks, back to ChannelAgent")
+                    return channel_agent
+                else:
+                    logger.warning(f"RetrievalAgent response doesn't contain expected chunks")
+                    return None
+
+            elif last_speaker.name == "DecisionOrchestrator":
+                # DecisionOrchestrator should terminate
+                logger.info("DecisionOrchestrator spoke, conversation should end")
+                return None.name == "DecisionOrchestrator"
+                # DecisionOrchestrator should be the last to speak
+                logger.info("DecisionOrchestrator spoke, conversation should end")
+                return None
+
+            # Default fallback
+            logger.warning("No specific speaker selection rule matched, ending conversation")
+            return None
+
         except Exception as e:
-            logger.error(f"Error in select_speaker: {str(e)}")
+            logger.error(f"Error in custom_select_speaker: {str(e)}")
             return None
 
     # Create GroupChatManager
@@ -39,46 +78,27 @@ def create_group_chat_manager(group_chat, llm_config):
         code_execution_config=False
     )
 
-    # Override select_speaker
+    # Override select_speaker method
     manager.select_speaker = custom_select_speaker.__get__(manager, GroupChatManager)
 
-    # Override run_chat to handle responses
-    def custom_run_chat(self, messages=None, sender=None, config=None):
+    # Override generate_reply to handle the conversation flow
+    original_generate_reply = manager.generate_reply
+
+    def custom_generate_reply(self, messages=None, sender=None, config=None):
         try:
-            messages = messages or self.groupchat.messages
-            logger.info(f"Running chat with {len(messages)} messages")
-            for _ in range(self.groupchat.max_round):
-                last_speaker = sender if sender else self.groupchat.agents[0]
-                next_speaker = self.select_speaker(last_speaker, self.groupchat)
-                if not next_speaker:
-                    logger.warning("No next speaker selected")
-                    break
+            # Check for termination in the last message
+            if messages and len(messages) > 0:
+                last_content = messages[-1].get("content", "")
+                if "TERMINATE" in last_content:
+                    logger.info("TERMINATE detected in generate_reply, ending conversation")
+                    return "Conversation terminated successfully."
 
-                # Get reply
-                reply = next_speaker.generate_reply(messages=messages, sender=last_speaker)
-                logger.info(f"Received reply from {next_speaker.name}: type={type(reply)}, content={str(reply)[:100]}...")
-
-                # Handle different reply formats
-                is_termination = False
-                if isinstance(reply, tuple) and len(reply) == 2:
-                    is_termination, message = reply
-                elif isinstance(reply, dict) and "content" in reply:
-                    message = reply["content"]
-                else:
-                    message = reply
-
-                # Append message
-                messages.append({"content": message, "role": "assistant", "name": next_speaker.name})
-                self.groupchat.messages = messages
-
-                # Check for termination
-                if is_termination or "TERMINATE" in message:
-                    logger.info("Termination signal received")
-                    break
-            return messages
+            # Use original generate_reply
+            return original_generate_reply(messages, sender, config)
         except Exception as e:
-            logger.error(f"Error in run_chat: {str(e)}")
-            raise
+            logger.error(f"Error in custom_generate_reply: {str(e)}")
+            return f"Error in conversation: {str(e)}"
 
-    manager.run_chat = custom_run_chat.__get__(manager, GroupChatManager)
+    manager.generate_reply = custom_generate_reply.__get__(manager, GroupChatManager)
+
     return manager
