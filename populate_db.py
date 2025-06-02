@@ -11,8 +11,8 @@ import re
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-DB_CONN = "postgresql://postgres:myragpw@localhost:5432/ragdb2"
-CHUNK_TOKENS = 500
+DB_CONN = "postgresql://postgres:myragpw@0.0.0.0:5434/ragdb2"
+CHUNK_TOKENS = 800
 EMBED_MODEL = "thenlper/gte-large"
 
 # Agent-to-PDF mapping
