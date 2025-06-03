@@ -17,7 +17,7 @@ def create_retrieval_agent(llm_config, agent_name):
             match = re.search(pattern, last_message, re.DOTALL)
             if not match:
                 logger.error(f"Invalid prompt format: {last_message[:200]}...")
-                return (False, "@ChannelAgent: Invalid caller or format.")
+                return (True, "@ChannelAgent: Invalid caller or format.")
 
             query = match.group(1).strip()
             logger.info(f"Parsed query: {query}")
@@ -56,36 +56,47 @@ def create_retrieval_agent(llm_config, agent_name):
                     result = loop.run_until_complete(async_query())
             except Exception as e:
                 logger.error(f"Error running async query: {str(e)}")
-                return (False, f"@ChannelAgent: Error retrieving chunks: {str(e)}")
+                return (True, f"@ChannelAgent: Error retrieving chunks: {str(e)}")
 
             chunks = result.get("chunks", [])
             logger.info(f"Retrieved {len(chunks)} chunks from vector database")
 
             if not chunks:
                 logger.warning("No chunks retrieved")
-                return (False, "@ChannelAgent: Error retrieving chunks: No results found.")
+                return (True, "@ChannelAgent: Error retrieving chunks: No results found.")
 
-            # Format response with the exact chunks retrieved from database
-            response = "@ChannelAgent: Retrieved chunks:\n" + "\n---CHUNK_SEPARATOR---\n".join(chunks)
-            logger.info(f"Sending response structure: type={type(response)}, content={response[:100]}...")
-            return (False, response)
+            # Build the response with EXACT chunks from database
+            response = "@ChannelAgent: Retrieved chunks:\n\n"
+            
+            for i, chunk in enumerate(chunks, 1):
+                response += f"CHUNK {i}:\n{chunk}\n\n---CHUNK_SEPARATOR---\n\n"
+            
+            # Log the actual chunks being returned
+            logger.info(f"Returning {len(chunks)} exact raw chunks to ChannelAgent")
+            logger.info(f"Full response being sent: {response[:200]}...")
+            
+            # Return True to terminate the conversation chain and send this response directly
+            return (True, response)
             
         except Exception as e:
             logger.error(f"Error in RetrievalAgent: {str(e)}")
-            return (False, f"@ChannelAgent: Error retrieving chunks: {str(e)}")
+            return (True, f"@ChannelAgent: Error retrieving chunks: {str(e)}")
 
+    # Create agent with minimal LLM config
     agent = ConversableAgent(
         name=f"{agent_name}_RetrievalAgent",
         llm_config=llm_config,
         human_input_mode="NEVER",
         code_execution_config=False,
-        system_message="You are a RetrievalAgent that fetches chunks from a vector database for ChannelAgent using a defined function. You do not generate responses - only use the function."
+        system_message="You are a RetrievalAgent that returns database chunks."
     )
 
-    # Register custom reply function
+    # Register custom reply function that TERMINATES the conversation
+    # This prevents the LLM from processing the response
     agent.register_reply(
         trigger=ConversableAgent,
-        reply_func=process_message
+        reply_func=process_message,
+        position=0  # Highest priority
     )
 
     return agent

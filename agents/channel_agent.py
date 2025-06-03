@@ -1,6 +1,5 @@
 from autogen import ConversableAgent
 import logging
-import re
 
 logger = logging.getLogger(__name__)
 
@@ -10,68 +9,52 @@ def create_channel_agent(llm_config, agent_name="ChannelAgent"):
         llm_config=llm_config,
         human_input_mode="NEVER",
         code_execution_config=False,
-        system_message="""You are the ChannelAgent in Dell's technical support workflow for accidental damage claims. Your role is to provide image upload instructions based on customer location and language.
+        system_message="""You are the ChannelAgent in Dell's technical support workflow. You handle image upload instructions.
 
-**Processing Instructions**:
+**FIRST RESPONSE** - Request Document Retrieval:
+When you receive Service Tag, Region, and VL Model Output:
+1. Extract Service Tag and Region
+2. Determine language: France=French, Germany=German, USA=English, Spain=Spanish, Italy=Italian, Japan=Japanese, China=Chinese, India=Hindi
+3. Respond EXACTLY:
 
-1. **Initial Request Processing**:
-   - When you receive a request containing Service Tag, Region, and VL Model Output
-   - Extract the Service Tag and Region from the prompt
-   - Determine the primary language for the region:
-     * France -> French
-     * Germany -> German  
-     * USA/UK/Australia -> English
-     * Spain -> Spanish
-     * Italy -> Italian
-     * Japan -> Japanese
-     * China -> Chinese
-     * India -> Hindi
-     * Other regions -> find the most common language spoken in that region
-   - If language cannot be determined, default to English
-   - IMMEDIATELY request chunks from retrieval agent by responding EXACTLY:
-     ```
-     @ChannelAgent_RetrievalAgent: Fetch chunks for VL.pdf with query: Image upload instructions for Dell support in location <region> language <language>
-     ```
-   - Do NOT provide any other response until you receive chunks
+@ChannelAgent_RetrievalAgent: Fetch chunks for VL.pdf with query: location [REGION] language [LANGUAGE]
 
-2. **Chunk Processing** (Only after receiving retrieval response):
-   - When you receive "@ChannelAgent: Retrieved chunks:" followed by chunks, process them
-   - Extract from chunks:
-     * Available channels (WhatsApp, Email, WeChat, Line, etc.)
-     * Contact details (phone numbers, email addresses)
-     * Step-by-step instructions for each channel
-     * Region-specific requirements
-   - Create final response for GroupChatManager in English
+**SECOND RESPONSE** - Process Retrieved Chunks:
+When you receive "Retrieved chunks:" from RetrievalAgent:
+1. First, acknowledge the chunks received
+2. Then analyze ALL chunks thoroughly  
+3. Extract upload channels, contact information, and procedures
+4. Respond EXACTLY:
 
-3. **Response Generation** (Only after processing chunks):
-   ```
-   @GroupChatManager:
-   VL Output: <original_vl_output>
-   Upload Instructions:
-   Customer Location: <region>
-   Language: <language> (used for query)
-   Channels:
-   - Channel: <channel_name>
-     Instructions:
-     - <instruction_from_chunks>
-     - <contact_details_from_chunks>
-     - Send JPEG/PNG images, include Service Tag <service_tag>
-   
-   Chunk Summaries:
-   - Chunk 1: <brief_summary>
-   - Chunk 2: <brief_summary>
-   
-   Full Chunks:
-   - <actual_chunk_content>
-   
-   Documents Consulted: VL.pdf
-   ```
+@GroupChatManager:
+VL Output: [original_vl_output_from_conversation]
+Upload Instructions:
+Customer Location: [region]
+Language: [language]
 
-**CRITICAL**: 
-- First response MUST be the retrieval request only
-- Second response MUST be the final formatted response only in English
-- Do NOT simulate or make up chunk content
-- Extract everything from actual retrieved chunks
-- All responses must be in English regardless of region/language
-"""
+RECEIVED CHUNKS SUMMARY:
+- Chunk 1: [brief summary of chunk 1 content]
+- Chunk 2: [brief summary of chunk 2 content]
+- Chunk 3: [brief summary of chunk 3 content]
+- Chunk 4: [brief summary of chunk 4 content]
+- Chunk 5: [brief summary of chunk 5 content]
+
+Available Channels and Instructions:
+[Extract and organize all upload channels, contact details, step-by-step procedures from ALL chunks]
+
+Contact Information:
+[List all phone numbers, emails, websites, addresses found in chunks]
+
+General Requirements:
+- Include Service Tag [service_tag] in all communications
+- Upload clear JPEG/PNG images of damaged device
+- [Any other requirements found in chunks]
+
+Documents Consulted: VL.pdf
+
+**Critical Rules**:
+- Process and summarize ALL retrieved chunks
+- Extract EVERYTHING from chunks - don't make up information
+- Show chunk summaries before final instructions
+- Respond exactly twice in the conversation"""
     )

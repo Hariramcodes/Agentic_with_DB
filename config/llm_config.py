@@ -7,7 +7,7 @@ llm_config = {
             "price": [0.0, 0.0],
         }
     ],
-    "timeout": 300,
-    "temperature": 0.1,
-    "max_tokens": 1024,
+    "timeout": 45,
+    "temperature": 0.0,
+    "max_tokens": 256,
 }
