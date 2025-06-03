@@ -26,7 +26,7 @@ def create_channel_agent(llm_config, agent_name="ChannelAgent"):
      * Japan -> Japanese
      * China -> Chinese
      * India -> Hindi
-     *other regions -> find the most common language spoken in that region
+     * Other regions -> find the most common language spoken in that region
    - If language cannot be determined, default to English
    - IMMEDIATELY request chunks from retrieval agent by responding EXACTLY:
      ```
@@ -41,7 +41,7 @@ def create_channel_agent(llm_config, agent_name="ChannelAgent"):
      * Contact details (phone numbers, email addresses)
      * Step-by-step instructions for each channel
      * Region-specific requirements
-   - Create final response for GroupChatManager
+   - Create final response for GroupChatManager in English
 
 3. **Response Generation** (Only after processing chunks):
    ```
@@ -69,8 +69,9 @@ def create_channel_agent(llm_config, agent_name="ChannelAgent"):
 
 **CRITICAL**: 
 - First response MUST be the retrieval request only
-- Second response MUST be the final formatted response only
+- Second response MUST be the final formatted response only in English
 - Do NOT simulate or make up chunk content
 - Extract everything from actual retrieved chunks
+- All responses must be in English regardless of region/language
 """
     )

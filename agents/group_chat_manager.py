@@ -30,7 +30,7 @@ def create_group_chat_manager(group_chat, llm_config):
 
             elif last_speaker.name == "ChannelAgent":
                 # Check if ChannelAgent is requesting chunks or providing final response
-                if "@ChannelAgent_RetrievalAgent:" in last_message_content:
+                if "@ChannelAgent_RetrievalAgent:" in last_message_content and "Fetch chunks" in last_message_content:
                     # ChannelAgent requesting chunks -> RetrievalAgent
                     retrieval_agent = next((agent for agent in groupchat.agents if "RetrievalAgent" in agent.name), None)
                     logger.info(f"ChannelAgent requesting chunks, selecting RetrievalAgent")
@@ -41,7 +41,7 @@ def create_group_chat_manager(group_chat, llm_config):
                     logger.info(f"ChannelAgent providing final response, selecting DecisionOrchestrator")
                     return decision_agent
                 else:
-                    logger.warning(f"ChannelAgent response doesn't match expected format")
+                    logger.warning(f"ChannelAgent response doesn't match expected format: {last_message_content[:100]}")
                     return None
 
             elif "RetrievalAgent" in last_speaker.name:
@@ -51,7 +51,7 @@ def create_group_chat_manager(group_chat, llm_config):
                     logger.info(f"RetrievalAgent returned chunks, back to ChannelAgent")
                     return channel_agent
                 else:
-                    logger.warning(f"RetrievalAgent response doesn't contain expected chunks")
+                    logger.warning(f"RetrievalAgent response doesn't contain expected chunks format")
                     return None
 
             elif last_speaker.name == "DecisionOrchestrator":
