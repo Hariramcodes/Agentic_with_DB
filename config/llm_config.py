@@ -1,3 +1,6 @@
+# AG2 Compatible LLM Configuration
+# Removed unsupported parameters: frequency_penalty, presence_penalty
+
 llm_config = {
     "config_list": [
         {
@@ -8,6 +11,8 @@ llm_config = {
         }
     ],
     "timeout": 300,
-    "temperature": 0.0,
-    "max_tokens": 256,
+    "temperature": 0.1,
+    "max_tokens": 1024,
+    "top_p": 0.9,
+    # Note: frequency_penalty and presence_penalty are not supported in AG2
 }

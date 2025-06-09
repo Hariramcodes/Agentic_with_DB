@@ -1,110 +1,269 @@
-from autogen import GroupChatManager
+from autogen import GroupChatManager, GroupChat
 import logging
+import re
 
 logger = logging.getLogger(__name__)
 
-def custom_select_speaker(last_speaker, groupchat):
-    """Custom speaker selection function for automatic flow"""
-    try:
-        messages = groupchat.messages
+class CustomGroupChat(GroupChat):
+    """Custom GroupChat with proper speaker selection for retrieval agents and dual analyzer flow"""
+    
+    def select_speaker(self, last_speaker, selector):
+        """Override the select_speaker method to implement custom logic for dual analyzer flow"""
+        messages = self.messages
+        total_messages = len(messages)
         
-        # Debug: Print everything
-        print(f"\n🔍 DEBUG: Auto Speaker Selection")
-        print(f"   Last speaker: {last_speaker.name if last_speaker else 'None'}")
-        print(f"   Total messages: {len(messages)}")
-        print(f"   Available agents: {[agent.name for agent in groupchat.agents]}")
+        # Debug info
+        last_speaker_name = last_speaker.name if last_speaker else "None"
         
+        # Get last message content safely
+        last_message = ""
         if messages:
-            last_message_content = messages[-1].get('content', '')
-            print(f"   Last message (first 100 chars): {last_message_content[:100]}...")
-        else:
-            last_message_content = ''
-        
-        # Handle start of conversation
-        if not messages or len(messages) == 1:
-            user_proxy = next((agent for agent in groupchat.agents if agent.name == "UserProxyAgent"), None)
-            print(f"   ✅ START: Selecting UserProxy: {user_proxy.name if user_proxy else 'None'}")
-            return user_proxy
-            
-        # Handle UserProxy responses
-        if last_speaker and last_speaker.name == "UserProxyAgent":
-            if "VL_STATUS: NO_IMAGE_FOUND" in last_message_content:
-                channel_agent = next((agent for agent in groupchat.agents if agent.name == "ChannelAgent"), None)
-                print(f"   ✅ UserProxy → ChannelAgent: {channel_agent.name if channel_agent else 'None'}")
-                return channel_agent
+            last_msg = messages[-1]
+            if isinstance(last_msg, dict):
+                last_message = last_msg.get("content", "")
             else:
-                print(f"   🔄 UserProxy continues")
+                last_message = str(last_msg)
+        
+        print(f"\n🔍 CUSTOM SPEAKER SELECTION")
+        print(f"   Last speaker: {last_speaker_name}")
+        print(f"   Total messages: {total_messages}")
+        print(f"   Last message preview: {last_message[:100]}...")
+        print(f"   Available agents: {[agent.name for agent in self.agents]}")
+        
+        # PRIORITY 1: Check for retrieval agent requests
+        if "@" in last_message and "_RetrievalAgent:" in last_message:
+            # Extract the retrieval agent name
+            retrieval_pattern = r"@(\w+_RetrievalAgent):"
+            retrieval_match = re.search(retrieval_pattern, last_message)
+            if retrieval_match:
+                retrieval_agent_name = retrieval_match.group(1)
+                print(f"   🎯 RETRIEVAL REQUEST DETECTED: {retrieval_agent_name}")
+                
+                # Find the agent
+                for agent in self.agents:
+                    if agent.name == retrieval_agent_name:
+                        print(f"   ✅ FOUND AND SELECTING: {retrieval_agent_name}")
+                        return agent
+                
+                print(f"   ❌ Retrieval agent {retrieval_agent_name} not found!")
+        
+        # START: First message after initial scenario
+        if total_messages == 1:
+            for agent in self.agents:
+                if agent.name == "UserProxyAgent":
+                    print(f"   ✅ START: UserProxyAgent")
+                    return agent
+        
+        # UserProxyAgent flow
+        if last_speaker_name == "UserProxyAgent":
+            print(f"   🔍 Analyzing UserProxy output...")
+            
+            # Check for VL_STATUS in all UserProxy messages
+            all_user_messages = []
+            for msg in messages:
+                if isinstance(msg, dict) and msg.get('name') == 'UserProxyAgent':
+                    all_user_messages.append(msg.get('content', ''))
+            
+            combined_text = " ".join(all_user_messages)
+            
+            if "VL_STATUS: NO_IMAGE_FOUND" in combined_text:
+                for agent in self.agents:
+                    if agent.name == "ChannelAgent":
+                        print(f"   ✅ NO_IMAGE_FOUND → ChannelAgent")
+                        return agent
+            elif "VL_STATUS: IMAGE_FOUND" in combined_text:
+                # NEW: For IMAGE_FOUND, we can start with either EntitlementAnalyzer or DamageAnalyzer
+                # Check if either has already been called
+                entitlement_called = any(
+                    msg.get('name') == 'EntitlementAnalyzer' and 'ENTITLEMENT ANALYSIS COMPLETE' in msg.get('content', '')
+                    for msg in messages if isinstance(msg, dict)
+                )
+                damage_called = any(
+                    msg.get('name') == 'DamageAnalyzer' and 'DAMAGE ANALYSIS COMPLETE' in msg.get('content', '')
+                    for msg in messages if isinstance(msg, dict)
+                )
+                
+                if not entitlement_called and not damage_called:
+                    # Neither called yet, start with EntitlementAnalyzer (you can change this order)
+                    for agent in self.agents:
+                        if agent.name == "EntitlementAnalyzer":
+                            print(f"   ✅ IMAGE_FOUND → EntitlementAnalyzer (first)")
+                            return agent
+                elif entitlement_called and not damage_called:
+                    # EntitlementAnalyzer done, call DamageAnalyzer
+                    for agent in self.agents:
+                        if agent.name == "DamageAnalyzer":
+                            print(f"   ✅ EntitlementAnalyzer done → DamageAnalyzer")
+                            return agent
+                elif damage_called and not entitlement_called:
+                    # DamageAnalyzer done, call EntitlementAnalyzer
+                    for agent in self.agents:
+                        if agent.name == "EntitlementAnalyzer":
+                            print(f"   ✅ DamageAnalyzer done → EntitlementAnalyzer")
+                            return agent
+                else:
+                    # Both called, go to DecisionOrchestrator
+                    for agent in self.agents:
+                        if agent.name == "DecisionOrchestrator":
+                            print(f"   ✅ Both analyzers done → DecisionOrchestrator")
+                            return agent
+            else:
+                print(f"   🔄 No VL_STATUS yet - continue UserProxy")
                 return last_speaker
         
-        # Handle ChannelAgent responses
-        if last_speaker and last_speaker.name == "ChannelAgent":
-            print(f"🎯 ChannelAgent just spoke")
-            print(f"   Checking for '@ChannelAgent_RetrievalAgent:' in message...")
-            print(f"   Found: {'@ChannelAgent_RetrievalAgent:' in last_message_content}")
+        # RetrievalAgent responses - return to requesting agent
+        if "_RetrievalAgent" in last_speaker_name:
+            requester_name = last_speaker_name.replace('_RetrievalAgent', '')
+            for agent in self.agents:
+                if agent.name == requester_name:
+                    print(f"   ✅ {last_speaker_name} complete → {requester_name}")
+                    return agent
+        
+        # EntitlementAnalyzer workflow
+        if last_speaker_name == "EntitlementAnalyzer":
+            print(f"   🎯 EntitlementAnalyzer workflow")
             
-            if "@ChannelAgent_RetrievalAgent:" in last_message_content:
-                # Find retrieval agent
-                retrieval_agents = [agent for agent in groupchat.agents if "RetrievalAgent" in agent.name]
-                print(f"   🔍 Found RetrievalAgents: {[agent.name for agent in retrieval_agents]}")
+            # Check if analysis is complete
+            if any(phrase in last_message for phrase in [
+                "ENTITLEMENT ANALYSIS COMPLETE",
+                "ENTITLEMENT DECISION:",
+                "Ready for final decision making"
+            ]):
+                # Check if DamageAnalyzer has been called
+                damage_called = any(
+                    msg.get('name') == 'DamageAnalyzer' and 'DAMAGE ANALYSIS COMPLETE' in msg.get('content', '')
+                    for msg in messages if isinstance(msg, dict)
+                )
                 
-                if retrieval_agents:
-                    selected = retrieval_agents[0]
-                    print(f"   ✅ SELECTED: {selected.name}")
-                    return selected
+                if not damage_called:
+                    for agent in self.agents:
+                        if agent.name == "DamageAnalyzer":
+                            print(f"   ✅ EntitlementAnalyzer complete → DamageAnalyzer")
+                            return agent
                 else:
-                    print(f"   ❌ NO RETRIEVAL AGENT FOUND!")
-                    return None
-            elif "Upload Instructions:" in last_message_content:
-                # ChannelAgent provided final response -> DecisionOrchestrator
-                decision_agent = next((agent for agent in groupchat.agents if agent.name == "DecisionOrchestrator"), None)
-                print(f"   ✅ ChannelAgent → DecisionOrchestrator: {decision_agent.name if decision_agent else 'None'}")
-                return decision_agent
-            else:
-                print(f"   ❌ ChannelAgent message doesn't match patterns")
-                return None
-        
-        # Handle RetrievalAgent responses
-        if last_speaker and "RetrievalAgent" in last_speaker.name:
-            channel_agent = next((agent for agent in groupchat.agents if agent.name == "ChannelAgent"), None)
-            print(f"   ✅ RetrievalAgent → ChannelAgent: {channel_agent.name if channel_agent else 'None'}")
-            return channel_agent
+                    for agent in self.agents:
+                        if agent.name == "DecisionOrchestrator":
+                            print(f"   ✅ Both analyzers complete → DecisionOrchestrator")
+                            return agent
             
-        # Handle DecisionOrchestrator
-        if last_speaker and last_speaker.name == "DecisionOrchestrator":
-            print(f"   ✅ DecisionOrchestrator spoke - ENDING CONVERSATION")
-            return None
+            # Check if waiting for retrieval
+            if "@EntitlementAnalyzer_RetrievalAgent:" in last_message:
+                print(f"   ⏳ Waiting for entitlement retrieval agent response...")
+                for agent in self.agents:
+                    if agent.name == "EntitlementAnalyzer_RetrievalAgent":
+                        print(f"   ✅ Force selecting EntitlementAnalyzer_RetrievalAgent")
+                        return agent
+            
+            print(f"   🔄 EntitlementAnalyzer continuing...")
+            return last_speaker
+        
+        # NEW: DamageAnalyzer workflow
+        if last_speaker_name == "DamageAnalyzer":
+            print(f"   🎯 DamageAnalyzer workflow")
+            
+            # Check if analysis is complete
+            if any(phrase in last_message for phrase in [
+                "DAMAGE ANALYSIS COMPLETE",
+                "DAMAGE DECISION:",
+                "Ready for final decision making"
+            ]):
+                # Check if EntitlementAnalyzer has been called
+                entitlement_called = any(
+                    msg.get('name') == 'EntitlementAnalyzer' and 'ENTITLEMENT ANALYSIS COMPLETE' in msg.get('content', '')
+                    for msg in messages if isinstance(msg, dict)
+                )
                 
-        print(f"   ❌ No pattern matched, ending conversation")
-        return None
+                if not entitlement_called:
+                    for agent in self.agents:
+                        if agent.name == "EntitlementAnalyzer":
+                            print(f"   ✅ DamageAnalyzer complete → EntitlementAnalyzer")
+                            return agent
+                else:
+                    for agent in self.agents:
+                        if agent.name == "DecisionOrchestrator":
+                            print(f"   ✅ Both analyzers complete → DecisionOrchestrator")
+                            return agent
+            
+            # Check if waiting for retrieval
+            if "@DamageAnalyzer_RetrievalAgent:" in last_message:
+                print(f"   ⏳ Waiting for damage retrieval agent response...")
+                for agent in self.agents:
+                    if agent.name == "DamageAnalyzer_RetrievalAgent":
+                        print(f"   ✅ Force selecting DamageAnalyzer_RetrievalAgent")
+                        return agent
+            
+            print(f"   🔄 DamageAnalyzer continuing...")
+            return last_speaker
         
-    except Exception as e:
-        print(f"❌ ERROR in speaker selection: {str(e)}")
-        import traceback
-        traceback.print_exc()
-        return None
+        # ChannelAgent workflow
+        if last_speaker_name == "ChannelAgent":
+            if any(phrase in last_message for phrase in [
+                "Upload Instructions:",
+                "CHANNEL AGENT ANALYSIS COMPLETE", 
+                "Ready for final decision making"
+            ]):
+                for agent in self.agents:
+                    if agent.name == "DecisionOrchestrator":
+                        print(f"   ✅ ChannelAgent complete → DecisionOrchestrator")
+                        return agent
+            
+            # Check if waiting for retrieval
+            if "@ChannelAgent_RetrievalAgent:" in last_message:
+                for agent in self.agents:
+                    if agent.name == "ChannelAgent_RetrievalAgent":
+                        print(f"   ✅ Force selecting ChannelAgent_RetrievalAgent")
+                        return agent
+                        
+            print(f"   🔄 ChannelAgent continuing...")
+            return None
+        
+        # DecisionOrchestrator ends conversation
+        if last_speaker_name == "DecisionOrchestrator":
+            print(f"   ✅ DecisionOrchestrator complete - CONVERSATION END")
+            return None
+        
+        # Default: use the selector agent to decide
+        print(f"   🔄 Unknown state - using selector agent")
+        return selector.select_speaker(last_speaker, self)
 
-def create_group_chat_manager(groupchat, llm_config):
-    """Create GroupChatManager with custom speaker selection"""
+
+class PureGroupChatManager(GroupChatManager):
+    def __init__(self, groupchat, llm_config=None):
+        super().__init__(
+            groupchat=groupchat, 
+            llm_config=llm_config,
+            max_consecutive_auto_reply=30,
+            human_input_mode="NEVER",
+            is_termination_msg=lambda x: False
+        )
+        logger.info("Created PURE GroupChatManager with custom speaker selection")
+
+
+def create_group_chat_manager(agents, llm_config):
+    """Create enhanced group chat manager for dynamic workflow"""
     
-    # IMPORTANT: Set the custom speaker selection on the groupchat BEFORE creating manager
-    groupchat.speaker_selection_method = custom_select_speaker
+    print(f"🔧 Creating CustomGroupChat with proper speaker selection")
+    print(f"   👥 Agents: {[agent.name for agent in agents]}")
     
-    # Create the REAL GroupChatManager (not ConversableAgent)
-    manager = GroupChatManager(
-        groupchat=groupchat,
-        llm_config=llm_config,
-        name="chat_manager",
-        system_message="""You are the GroupChatManager for Dell's technical support workflow. 
-        You manage the conversation flow between specialized agents.
-        
-        Your role is to:
-        - Ensure the correct agent speaks at the right time
-        - Keep the conversation focused on solving the customer's issue
-        - Coordinate between UserProxy, ChannelAgent, RetrievalAgent, and DecisionOrchestrator
-        
-        Do not generate content yourself - let the specialized agents handle their tasks.""",
+    logger.info(f"✅ Agent list: {[agent.name for agent in agents]}")
+    
+    # Create custom groupchat
+    groupchat = CustomGroupChat(
+        agents=agents,
+        messages=[],
+        max_round=40,  # Increased for dual analyzer flow
+        speaker_selection_method="auto",  # This will use our overridden select_speaker
+        allow_repeat_speaker=True,
+        max_retries_for_selecting_speaker=5,
+        enable_clear_history=False
     )
     
-    logger.info("Created GroupChatManager with CUSTOM speaker selection and system message")
+    manager = PureGroupChatManager(
+        groupchat=groupchat,
+        llm_config=llm_config
+    )
+    
+    print(f"   ✅ CustomGroupChat configured with overridden select_speaker method")
+    print(f"   ✅ Max rounds: {groupchat.max_round}")
     
     return manager
